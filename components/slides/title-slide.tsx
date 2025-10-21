@@ -1,12 +1,13 @@
 interface TitleSlideProps {
   title: string
   author?: string
+  authorSubtitle?: string
   date?: string
   tagline?: string
   typedText: string
 }
 
-export function TitleSlide({ title, author, date, tagline, typedText }: TitleSlideProps) {
+export function TitleSlide({ title, author, authorSubtitle, date, tagline, typedText }: TitleSlideProps) {
   return (
     <div className="text-center space-y-8">
       <div className="space-y-4">
@@ -22,6 +23,7 @@ export function TitleSlide({ title, author, date, tagline, typedText }: TitleSli
 
       <div className="space-y-2">
         <div className="text-lg font-medium text-primary">{author}</div>
+        {authorSubtitle && <div className="text-sm text-muted-foreground">{authorSubtitle}</div>}
         <div className="text-muted-foreground">{date}</div>
       </div>
 

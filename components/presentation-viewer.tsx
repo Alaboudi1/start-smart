@@ -5,6 +5,7 @@ import { presentationData } from "@/lib/presentation-data"
 import { TitleSlide } from "@/components/slides/title-slide"
 import { SectionSlide } from "@/components/slides/section-slide"
 import { ContentSlide } from "@/components/slides/content-slide"
+import { DiscussionSlide } from "@/components/slides/discussion-slide"
 import { BackgroundAnimation } from "@/components/presentation/background-animation"
 import { LogosHeader } from "@/components/presentation/logos-header"
 import { NavigationControls } from "@/components/presentation/navigation-controls"
@@ -73,6 +74,7 @@ export default function PresentationViewer() {
             <TitleSlide
               title={slide.title}
               author={slide.author}
+              authorSubtitle={slide.authorSubtitle}
               date={slide.date}
               tagline={slide.tagline}
               typedText={typedText}
@@ -80,11 +82,19 @@ export default function PresentationViewer() {
           )}
 
           {slide.type === "content" && (
-            <ContentSlide title={slide.title} subtitle={slide.subtitle} content={slide.content} image={slide.image} />
+            <ContentSlide title={slide.title} subtitle={slide.subtitle} content={slide.content} image={slide.image} video={slide.video} />
           )}
 
           {slide.type === "section" && (
             <SectionSlide section={slide.section} title={slide.title} subtitle={slide.subtitle} />
+          )}
+
+          {slide.type === "discussion" && (
+            <DiscussionSlide
+              title={slide.title}
+              subtitle={slide.subtitle}
+              discussionPrompt={slide.discussionPrompt}
+            />
           )}
         </div>
       </div>

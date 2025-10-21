@@ -6,11 +6,14 @@ interface SectionSlideProps {
 
 export function SectionSlide({ section, title, subtitle }: SectionSlideProps) {
   return (
-    <div className="text-center space-y-8">
-      <div className="space-y-4">
-        {section && <div className="text-accent text-lg font-medium uppercase tracking-wider">{section}</div>}
-        <h2 className="text-5xl md:text-6xl font-bold text-balance leading-tight">{title}</h2>
-        {subtitle && <p className="text-xl text-muted-foreground text-pretty max-w-3xl mx-auto">{subtitle}</p>}
+    <div className="text-center flex items-center justify-center h-full">
+      <div className="space-y-16 max-w-6xl px-8">
+        {section && <div className="text-accent text-2xl md:text-3xl font-medium uppercase tracking-wider">{section}</div>}
+        <h2
+          className="text-4xl md:text-5xl font-bold leading-relaxed whitespace-pre-line"
+          dangerouslySetInnerHTML={{ __html: title }}
+        />
+        {subtitle && <p className="text-3xl md:text-4xl text-muted-foreground text-pretty max-w-4xl mx-auto">{subtitle}</p>}
       </div>
     </div>
   )

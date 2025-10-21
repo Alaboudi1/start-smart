@@ -3,13 +3,12 @@
 import { useState, useEffect } from "react"
 
 const SUBTITLES = [
-  "Building AI Products That Scale",
-  "Building with AI for Innovation",
-  "Creating Intelligent Solutions",
-  "Developing AI-First Startups",
-  "Building with Machine Learning",
-  "AI Product Development Strategies",
-  "Building Smart Technology Solutions",
+  "Building AI-First Startups",
+  "Creating AI-Enabled Startups",
+  "Building Great UX with AI",
+  "AI-First Product Development",
+  "Enabling Innovation with AI",
+  "Designing Exceptional AI Experiences",
 ]
 
 export function useTypingEffect(isActive: boolean) {
